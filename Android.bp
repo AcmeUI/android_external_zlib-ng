@@ -34,11 +34,6 @@ cflags_arm = [
     "-DARM_NEON_SLIDEHASH",
     "-DARM_NEON_HASLD4",
     "-DARM_ACLE_CRC_HASH",
-]
-
-
-// neon adler32 support is broken for arm and cause bootloop
-cflags_arm64 = [
     "-DARM_NEON_ADLER32",
 ]
 
@@ -171,7 +166,7 @@ cc_defaults {
             srcs: srcs_arm,
         },
         arm64: {
-            cflags: cflags_arm + cflags_arm64,
+            cflags: cflags_arm,
             srcs: srcs_arm,
         },
         x86_64: {
